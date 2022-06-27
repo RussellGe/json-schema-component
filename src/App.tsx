@@ -1,7 +1,13 @@
-import { createApp, defineComponent, h, reactive, ref } from 'vue';
+import { defineComponent, reactive, ref } from 'vue';
 import HelloWorld from './components/HelloWorld';
+import Saojiao from './components/sanjiao.vue';
 function renderHelloWorld(num: number) {
-  return <HelloWorld age={num} />;
+  return (
+    <>
+      <HelloWorld age={num} />
+      <Saojiao />
+    </>
+  );
 }
 
 export default defineComponent({
@@ -23,6 +29,7 @@ export default defineComponent({
           <p>{state.name + count}</p>
           <input type="text" v-model={state.name} />
           {renderHelloWorld(numberRef.value)}
+
         </div>
       );
 
